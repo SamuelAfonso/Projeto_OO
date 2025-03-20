@@ -1,0 +1,11 @@
+<div>
+    <h2>Log In</h2>
+    <p style="color: green"><%= notice %></p>
+    <%= form_tag "/login" do %>
+        Nome: <%= text_field_tag :name %><br>
+        Senha: <%= password_field_tag :password %><br>
+        <%= submit_tag "Log In" %>
+        <%= link_to 'Voltar a Página Inicial', root_path %>
+    
+    <% end %>
+</div>

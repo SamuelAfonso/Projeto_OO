@@ -1,0 +1,15 @@
+<h1>Olá! Seja bem vindo ao blog Mundo Real.com!</h1>
+<p style="color: green"><%= notice %></p>
+<p>Suas principais publicações ficam bem aqui</p>
+
+<% Post.all.each do |post| %>
+
+    <h1><%= link_to_if(!current_user().nil?, post.title, post) %></h1>
+    <p> <%= post.description %> </p>
+<% end %>
+
+<%# <%= link_to 'Fazer uma Publicação', posts_path > %>
+<%= link_to_if(!current_user().nil?, 'Fazer uma Publicação', { controller: "posts", action: "new" }) %>
+<%= link_to 'Login', login_path %>
+<%= link_to_if(!current_user().nil?, 'Logout', { controller: "sessions", action: "destroy" }) %>
+<%= link_to 'Cadastrar', new_user_path %>

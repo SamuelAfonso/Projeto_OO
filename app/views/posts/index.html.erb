@@ -1,0 +1,16 @@
+
+
+
+<h1>Publicações</h1>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+    <p>
+      <%= link_to "Mostrar Publicação", post %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Nova Publicação", new_post_path %>
+<%= link_to 'Voltar a Página Inicial', root_path %>
